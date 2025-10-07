@@ -7,7 +7,7 @@ public class Solution {
     public Solution() {
     }
 
-    public char firstNonRepeatedCharacter(String str){
+    public char firstNonRepeatedCharacter1(String str){
 
         if(str == null || str.length() == 0){
             return Character.MIN_VALUE;
@@ -22,6 +22,32 @@ public class Solution {
         for(Map.Entry<Character, Integer> entry : chars.entrySet()){
             if(entry.getValue() == 1){
                 return entry.getKey();
+            }
+        }
+
+        return Character.MIN_VALUE;
+    }
+
+    public char firstNonRepeatedCharacter2(String str) {
+
+        if (str == null || str.isBlank()) {
+            return Character.MIN_VALUE;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+            int count = 0;
+            for (int j = 0; j < str.length(); j++) {
+                if (ch == str.charAt(j) && i != j) {
+                    count++;
+                    break;
+                }
+            }
+
+            if (count == 0) {
+                return ch;
             }
         }
 
