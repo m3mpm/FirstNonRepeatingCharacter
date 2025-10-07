@@ -16,23 +16,27 @@ public class Main {
 
         Solution solution = new Solution();
 
-        String str = "My high school, the Illinois Mathematics and Science Academy, "
-                + "showed me that anything is possible and that you're never too young to think big. "
-                + "At 15, I worked as a computer programmer at the Fermi National Accelerator Laboratory, "
-                + "or Fermilab. After graduating, I attended Stanford for a degree in economics and "
-                + "computer science.";
+        String str1 = "swiss";
+        String str2 = "😍 💕 I Ӝ love you Ӝ so much 😍";
 
         startTime1 = System.nanoTime();
-        char ch1 = solution.firstNonRepeatedCharacter1(str);
+        char ch1 = solution.firstNonRepeatedCharacter1(str1);
         startTime2 = System.nanoTime();
         displayExecutionTime(startTime2 - startTime1);
         System.out.println(ch1);
 
         startTime1 = System.nanoTime();
-        char ch2 = solution.firstNonRepeatedCharacter2(str);
+        char ch2 = solution.firstNonRepeatedCharacter2(str1);
         startTime2 = System.nanoTime();
         displayExecutionTime(startTime2 - startTime1);
         System.out.println(ch2);
+
+        startTime1 = System.nanoTime();
+        String ch3 = solution.firstNonRepeatedCharacter3(str2);
+        startTime2 = System.nanoTime();
+        displayExecutionTime(startTime2 - startTime1);
+        System.out.println(ch3);
+
     }
 
 }
