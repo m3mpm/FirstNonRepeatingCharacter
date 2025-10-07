@@ -9,6 +9,7 @@ public class Solution {
     public Solution() {
     }
 
+    // Версия, которая работает с UTF-16
     public char firstNonRepeatedCharacter1(String str) {
 
         if (str == null || str.isBlank()) {
@@ -56,6 +57,7 @@ public class Solution {
         return Character.MIN_VALUE;
     }
 
+    // Версия, которая работает с Unicode, с UTF-32
     public String firstNonRepeatedCharacter3(String str) {
         if (str == null || str.isBlank()) {
             return String.valueOf(Character.MIN_VALUE);
@@ -64,8 +66,8 @@ public class Solution {
         Map<String, Integer> chars = new LinkedHashMap<>();
 
         for (int i = 0; i < str.length(); i++) {
-            int cp = str.codePointAt(i);
-            String ch = String.valueOf(Character.toChars(cp));
+            int cp = str.codePointAt(i); // кодовая точка
+            String ch = String.valueOf(Character.toChars(cp)); //получение символа из кодовой точки
             if (Character.charCount(cp) == 2) { // 2 означает суррогатную пару
                 i++;
             }
